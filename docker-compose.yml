@@ -1,0 +1,14 @@
+version: '3.2'
+
+volumes:
+  data_words: {}
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - data_words:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    ports:
+      - 5490:5432
